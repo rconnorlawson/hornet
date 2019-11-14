@@ -78,6 +78,11 @@ int exec(int argc, char* argv[]) {
     using namespace graph::structure_prop;
     using namespace graph::parsing_prop;
 
+    if (argc < 3) {
+	std::cout << "Usage: hornet_delete_test <graph_file> <batch_size>" << std::endl;
+	return 1;
+    }
+
     graph::GraphStd<vert_t, vert_t> graph;
     graph.read(argv[1]);
     int batch_size = std::stoi(argv[2]);

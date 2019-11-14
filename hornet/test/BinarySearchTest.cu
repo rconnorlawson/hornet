@@ -151,6 +151,11 @@ struct LL {
 int exec(int argc, char* argv[]) {
     using namespace graph;
 
+    if (argc < 2) {
+	std::cout << "Usage: lb_test <graph_file>" << std::endl;
+	return 1;
+    }
+
     GraphStd<int, int> graph1;
     graph1.read(argv[1]);
 
